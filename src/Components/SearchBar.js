@@ -1,7 +1,9 @@
+import './SearchBar.css';
+
 function SearchBar() {
     return(
         <div class="SearchBar">
-            <input placeholder="enter a song." />
+            <input placeholder="enter a song" />
             <button class="SearchButton">search</button>
         </div>
     );
