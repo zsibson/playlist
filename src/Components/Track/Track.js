@@ -1,13 +1,15 @@
 import './Track';
 
+//todo renderAction to display button element as its contentis isRemoval property is true
+
 function Track() {
     return(
-        <div class="Track">
-            <div class="Track-information">
+        <div className="Track">
+            <div className="Track-information">
                 <h3>{/*<!-- track name will go here -->*/}</h3>
                 <p>{/*<!-- track artist will go here--> | <!-- track album will go here -->*/}</p>
             </div>
-            <button class="Track-action"> {/*<!-- + or - will go here -->*/}</button>
+            <button className="Track-action"> {/*<!-- + or - will go here -->*/}</button>
         </div>
     );
 }
