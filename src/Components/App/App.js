@@ -3,8 +3,18 @@ import './App.css';
 
 import SearchBar from '../SearchBar';
 import Playlist from '../Playlist/Playlist';
+import SearchResults from '../SearchResults/SearchResults';
 
 class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      searchResults: [],
+      playlistName: 'new playlist',
+      playlistTracks: [],
+    }
+  }
+  
   render(){
     return (
       <div>
@@ -13,7 +23,7 @@ class App extends React.Component {
           {<SearchBar/>}
           <div className="App-playlist">
             {/* Add a SearchResults component */}
-            <Playlist/>
+            
             {/* Add a Playlist component */}
           </div>
         </div>
