@@ -2,9 +2,9 @@ import './SearchBar.css';
 
 function SearchBar() {
     return(
-        <div class="SearchBar">
+        <div className="SearchBar">
             <input placeholder="enter a song" />
-            <button class="SearchButton">search</button>
+            <button className="SearchButton">search</button>
         </div>
     );
 }

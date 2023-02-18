@@ -1,6 +1,17 @@
-import './Track';
+import './Track.css';
 
 //todo renderAction to display button element as its contentis isRemoval property is true
+
+renderAction = () => {
+    const { isRemoval } = this.props;
+    const content = isRemoval ? '-' : '+';
+    
+    return (
+      <button className="Track-action">
+        {content}
+      </button>
+    );
+  }
 
 function Track() {
     return(
@@ -13,3 +24,6 @@ function Track() {
         </div>
     );
 }
+
+
+  
