@@ -23,8 +23,9 @@ class App extends React.Component {
           {<SearchBar/>}
           <div className="App-playlist">
             {/* Add a SearchResults component */}
-            
+            {<SearchResults />}
             {/* Add a Playlist component */}
+            {<Playlist />}
           </div>
         </div>
       </div>
