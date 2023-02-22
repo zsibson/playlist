@@ -10,12 +10,12 @@
     font-size: 1.05rem;
     transition: color .25s;
     border: 0px;
-    background-color: rgba(0, 0, 0, 0);
-    color: #fff;
+    background-color: #86868600;
+    color: #000000;
   }
   
   .Track-action:hover {
-    color: rgba(265, 265, 265, .5);
+    color: #444444;
   }
   
   .Track-information {

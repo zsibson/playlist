@@ -1,13 +1,16 @@
 import React from 'react';
-
 import './Track.css';
+
+
+
+
 
 class Track extends React.Component {
     renderAction() {
         if (this.props.isRemoval) {
-            return <button className='Track-action' onClick={this.removeTrack}>Delete</button>
+            return <button className='Track-action' onClick={this.removeTrack}>delete</button>
         } else {
-            return <button className='Track-action' onClick={this.addTrack}>Add</button>
+            return <button className='Track-action' onClick={this.addTrack}>add</button>
         }
     }
 
