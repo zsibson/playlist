@@ -2,7 +2,7 @@ import React  from 'react';
 import './App.css';
 
 // Import Components
-import SearchBar from '../SearchBar';
+import SearchBar from '../SeachBar/SearchBar';
 import Playlist from '../Playlist/Playlist';
 import SearchResults from '../SearchResults/SearchResults';
 
