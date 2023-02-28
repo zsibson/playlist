@@ -10,10 +10,49 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      searchResults: [],
+      searchResults: [
+        {
+          name: 'Goodness of God',
+          artist: 'Bethel Music',
+          album: 'Victory',
+          id: Math.random(1000),
+      },
+      {
+        name: 'Goodness of God',
+        artist: 'Bethel Music',
+        album: 'Victory',
+        id: Math.random(1000),
+    },
+    {
+      name: 'Goodness of God',
+      artist: 'Bethel Music',
+      album: 'Victory',
+      id: Math.random(1000),
+  },
+      ],
       playlistName: 'new playlist',
-      playlistTracks: [],
+      playlistTracks: [
+        {
+        name: 'Goodness of God',
+        artist: 'Bethel Music',
+        album: 'Victory',
+        id: Math.random(1000),
+    },
+    {
+      name: 'Goodness of God',
+      artist: 'Bethel Music',
+      album: 'Victory',
+      id: Math.random(1000),
+  },
+  {
+    name: 'Goodness of God',
+    artist: 'Bethel Music',
+    album: 'Victory',
+    id: Math.random(1000),
+},
+  ],
     }
+    console.log(this.state);
   }
   
   render(){
