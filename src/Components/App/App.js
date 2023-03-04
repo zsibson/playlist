@@ -34,14 +34,12 @@ function App() {
       <div>
         <h1>play<span className="highlight">list</span>.</h1>
         <div className="App">
-          {<SearchBar />}
+          <SearchBar />
           <div className="App-playlist">
 
-            {/* Search Result Component Below */}
-            {<SearchResults searchResults={searchResults} />}
+            <SearchResults searchResults={searchResults} />
 
-            {/* Add a Playlist component */}
-            {<Playlist />}
+            <Playlist />
 
           </div>
         </div>
