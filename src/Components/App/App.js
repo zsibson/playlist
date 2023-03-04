@@ -1,61 +1,35 @@
-import React  from 'react';
+import {useState}  from 'react';
 import './App.css';
+
 
 // Import Components
 import SearchBar from '../SeachBar/SearchBar';
 import Playlist from '../Playlist/Playlist';
 import SearchResults from '../SearchResults/SearchResults';
 
-class App extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      searchResults: [
+function App() {
+    const [searchResults, setSearchResults] = useState(
+      [
         {
           name: 'Goodness of God',
           artist: 'Bethel Music',
           album: 'Victory',
-          id: Math.random(1000),
-      },
-      {
-        name: 'Goodness of God',
-        artist: 'Bethel Music',
-        album: 'Victory',
-        id: Math.random(1000),
-    },
-    {
-      name: 'Goodness of God',
-      artist: 'Bethel Music',
-      album: 'Victory',
-      id: Math.random(1000),
-  },
-      ],
-      playlistName: 'new playlist',
-      playlistTracks: [
+          id: 1,
+        },
         {
-        name: 'Goodness of God',
-        artist: 'Bethel Music',
-        album: 'Victory',
-        id: Math.random(1000),
-    },
-    {
-      name: 'Goodness of God',
-      artist: 'Bethel Music',
-      album: 'Victory',
-      id: Math.random(1000),
-  },
-  {
-    name: 'Goodness of God',
-    artist: 'Bethel Music',
-    album: 'Victory',
-    id: Math.random(1000),
-},
-  ],
-    }
-    console.log(this.state);
-  }
-  
-  render(){
+          name: 'Victory is Yours',
+          artist: 'Bethel Music',
+          album: 'Victory',
+          id: 2,
+        },
+        {
+          name: 'Raise a Hallelujah',
+          artist: 'Bethel Music',
+          album: 'Victory',
+          id: 3,
+        },
+      ]);
+
     return (
       <div>
         <h1>play<span className="highlight">list</span>.</h1>
@@ -64,7 +38,7 @@ class App extends React.Component {
           <div className="App-playlist">
 
             {/* Search Result Component Below */}
-            {<SearchResults searchResults={this.state.searchResults} />}
+            {<SearchResults searchResults={searchResults} />}
 
             {/* Add a Playlist component */}
             {<Playlist />}
@@ -73,7 +47,6 @@ class App extends React.Component {
         </div>
       </div>
     );
-  }
 }
 
 
