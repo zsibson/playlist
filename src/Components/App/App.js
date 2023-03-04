@@ -8,6 +8,35 @@ import Playlist from '../Playlist/Playlist';
 import SearchResults from '../SearchResults/SearchResults';
 
 function App() {
+  const [playlistName, setPlaylistName] = useState('my playlist');
+  const [playlistResults, setPlaylistResults] = useState(
+    [
+      {
+        name: 'Know You Will',
+        artist: 'Hillsong United',
+        album: 'Know You Will',
+        id: 4,
+      },
+      {
+        name: 'Your Love Is Strong',
+        artist: 'Cory Asbury',
+        album: 'Reckless Love',
+        id: 5,
+      },
+      {
+        name: 'Abba',
+        artist: 'John Mark Pantana',
+        album: 'Love Secrets',
+        id: 6,
+      },
+      {
+        name: 'Here I am to Worship',
+        artist: 'Shane and Shane',
+        album: 'Worship Initiative',
+        id: 7,
+      },
+    ]
+  );
     const [searchResults, setSearchResults] = useState(
       [
         {
@@ -28,7 +57,8 @@ function App() {
           album: 'Victory',
           id: 3,
         },
-      ]);
+      ]
+    );
 
     return (
       <div>
@@ -39,7 +69,9 @@ function App() {
 
             <SearchResults searchResults={searchResults} />
 
-            <Playlist />
+            <Playlist playlistResults={playlistResults} 
+                      playlistName={playlistName}
+                      />
 
           </div>
         </div>
