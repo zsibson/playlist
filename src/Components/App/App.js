@@ -9,7 +9,7 @@ import SearchResults from '../SearchResults/SearchResults';
 
 function App() {
   const [playlistName, setPlaylistName] = useState('my playlist');
-  const [playlistResults, setPlaylistResults] = useState(
+  const [playlistTracks, setPlaylistResults] = useState(
     [
       {
         name: 'Know You Will',
@@ -69,7 +69,7 @@ function App() {
 
             <SearchResults searchResults={searchResults} />
 
-            <Playlist playlistResults={playlistResults} 
+            <Playlist playlistTracks={playlistTracks} 
                       playlistName={playlistName}
                       />
 
