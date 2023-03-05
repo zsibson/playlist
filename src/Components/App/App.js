@@ -1,4 +1,4 @@
-import {useState}  from 'react';
+import {useState, useCallback}  from 'react';
 import './App.css';
 
 
@@ -9,7 +9,7 @@ import SearchResults from '../SearchResults/SearchResults';
 
 function App() {
   const [playlistName, setPlaylistName] = useState('my playlist');
-  const [playlistTracks, setPlaylistResults] = useState(
+  const [playlistTracks, setPlaylistTracks] = useState(
     [
       {
         name: 'Know You Will',
@@ -60,6 +60,13 @@ function App() {
       ]
     );
 
+const addTrack = useCallback(track => {
+  if (playlistTracks.find(savedTrack => savedTrack.id === track.id)) {
+    return;
+  }
+  setPlaylistTracks(prevPlaylistTracks => [...prevPlaylistTracks, track]);
+},[playlistTracks]);
+
     return (
       <div>
         <h1>play<span className="highlight">list</span>.</h1>
@@ -69,8 +76,8 @@ function App() {
 
             <SearchResults searchResults={searchResults} />
 
-            <Playlist playlistTracks={playlistTracks} 
-                      playlistName={playlistName}
+            <Playlist playlistName={playlistName}
+                      playlistTracks={playlistTracks} 
                       />
 
           </div>
