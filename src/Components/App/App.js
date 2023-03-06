@@ -60,6 +60,7 @@ function App() {
       ]
     );
 
+    
 const addTrack = useCallback(track => {
   if (playlistTracks.find(savedTrack => savedTrack.id === track.id)) {
     return;
@@ -74,11 +75,13 @@ const addTrack = useCallback(track => {
           <SearchBar />
           <div className="App-playlist">
 
-            <SearchResults searchResults={searchResults} />
+            <SearchResults searchResults={searchResults}
+                           onAdd={addTrack}
+            />
 
             <Playlist playlistName={playlistName}
                       playlistTracks={playlistTracks} 
-                      />
+            />
 
           </div>
         </div>
