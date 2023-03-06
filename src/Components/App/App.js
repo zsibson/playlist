@@ -68,6 +68,11 @@ const addTrack = useCallback(track => {
   setPlaylistTracks(prevPlaylistTracks => [...prevPlaylistTracks, track]);
 },[playlistTracks]);
 
+const removeTrack = (track) => {
+  const updatePlaylistTracks = playlistTracks.filter(savedTrack => savedTrack.id !== track.id);
+  setPlaylistTracks(updatePlaylistTracks);
+};
+
     return (
       <div>
         <h1>play<span className="highlight">list</span>.</h1>
@@ -77,10 +82,12 @@ const addTrack = useCallback(track => {
 
             <SearchResults searchResults={searchResults}
                            onAdd={addTrack}
+                          
             />
 
             <Playlist playlistName={playlistName}
                       playlistTracks={playlistTracks} 
+                      onRemove={removeTrack}
             />
 
           </div>

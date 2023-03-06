@@ -6,17 +6,18 @@ function Track({track, isRemoval, onAdd, onRemove}) {
         onAdd(track);
     };
 
-    const handleRemoveTrack = () => {
+    function handleRemoveTrack() {
         onRemove(track);
-    };
+    }
 
-   const renderAction = () => {
+   function renderAction() {
         if (isRemoval) {
-            return <button className='Track-action' onClick={handleRemoveTrack}>delete</button>
+            return <button className='Track-action' onClick={handleRemoveTrack}>delete</button>;
         } else {
-            return <button className='Track-action' onClick={handleAddTrack}>add</button>
+            return <button className='Track-action' onClick={handleAddTrack}>add</button>;
         }
     }
+
         return (
             <div className="Track">
                 <div className="Track-information">
