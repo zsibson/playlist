@@ -1,5 +1,7 @@
 import React from 'react';
 import './Track.css';
+import {Trash, AddCircle } from 'iconoir-react';
+
 
 function Track({track, isRemoval, onAdd, onRemove}) {
     const handleAddTrack = () => {
@@ -12,9 +14,9 @@ function Track({track, isRemoval, onAdd, onRemove}) {
 
    function renderAction() {
         if (isRemoval) {
-            return <button className='Track-action' onClick={handleRemoveTrack}>delete</button>;
+            return <Trash className='Track-action' onClick={handleRemoveTrack} />;
         } else {
-            return <button className='Track-action' onClick={handleAddTrack}>add</button>;
+            return <AddCircle className='Track-action' onClick={handleAddTrack} />;
         }
     }
 
