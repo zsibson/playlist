@@ -4,9 +4,11 @@ import './Playlist.css';
 import Tracklist from '../Tracklist/Tracklist';
 
 function Playlist({playlistTracks, onRemove}) {
+
+
         return(
             <div className="Playlist">
-                <input defaultValue={'my playlist'}/>
+                <input defaultValue={'my playlist'} />
                 
                 <Tracklist  tracks={playlistTracks}
                             onRemove={onRemove}

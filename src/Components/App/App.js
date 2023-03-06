@@ -1,7 +1,6 @@
 import {useState, useCallback}  from 'react';
 import './App.css';
 
-
 // Import Components
 import SearchBar from '../SeachBar/SearchBar';
 import Playlist from '../Playlist/Playlist';
@@ -59,7 +58,6 @@ function App() {
         },
       ]
     );
-
     
 const addTrack = useCallback(track => {
   if (playlistTracks.find(savedTrack => savedTrack.id === track.id)) {
@@ -73,6 +71,10 @@ const removeTrack = (track) => {
   setPlaylistTracks(updatePlaylistTracks);
 };
 
+const updatePlaylistName = (name) => {
+  setPlaylistName(name);
+}
+
     return (
       <div>
         <h1>play<span className="highlight">list</span>.</h1>
@@ -82,10 +84,10 @@ const removeTrack = (track) => {
 
             <SearchResults searchResults={searchResults}
                            onAdd={addTrack}
-                          
             />
 
             <Playlist playlistName={playlistName}
+                      onNameChange={updatePlaylistName}
                       playlistTracks={playlistTracks} 
                       onRemove={removeTrack}
             />
