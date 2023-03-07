@@ -3,7 +3,7 @@ import './Playlist.css';
 
 import Tracklist from '../Tracklist/Tracklist';
 
-function Playlist({playlistTracks, onRemove, onNameChange}) {
+function Playlist({playlistTracks, onRemove, onNameChange, onSave}) {
 
     const handleNameChange = (e) => {
         const newName = e.target.value;
@@ -21,7 +21,11 @@ function Playlist({playlistTracks, onRemove, onNameChange}) {
                             isRemoval
                 />
 
-                <button className="Playlist-save">save to spotify 🎉</button>
+                <button className="Playlist-save"
+                        onClick={onSave}
+                >
+                    save to spotify 🎉
+                </button>
             </div>
         )
     }
