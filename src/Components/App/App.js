@@ -79,11 +79,16 @@ const savePlaylist = () => {
   const trackURIs = playlistTracks.map(track => track.uri);
 };
 
+const search = (term) => {
+  console.log(term);
+};
+
     return (
       <div>
         <h1>play<span className="highlight">list</span>.</h1>
         <div className="App">
-          <SearchBar />
+          <SearchBar onSearch={search}
+           />
           <div className="App-playlist">
 
             <SearchResults searchResults={searchResults}
