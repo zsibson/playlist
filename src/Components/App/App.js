@@ -3,7 +3,7 @@ import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css'
 
 // Import Components
-import Login from '../../utils/Login';
+import Login from '../../Login'
 import SearchBar from '../SeachBar/SearchBar';
 import Playlist from '../Playlist/Playlist';
 import SearchResults from '../SearchResults/SearchResults';
