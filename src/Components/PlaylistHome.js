@@ -1,14 +1,12 @@
-import {useState, useCallback}  from 'react';
-import './App.css';
-import 'bootstrap/dist/css/bootstrap.min.css'
+import { useState, useCallback } from "react";
+
 
 // Import Components
-import Login from '../../Login'
-import SearchBar from '../SeachBar/SearchBar';
-import Playlist from '../Playlist/Playlist';
-import SearchResults from '../SearchResults/SearchResults';
+import SearchBar from '../Components/SeachBar/SearchBar';
+import Playlist from './Playlist/Playlist';
+import SearchResults from './SearchResults/SearchResults';
 
-function App() {
+function PlaylistHome() {
   const [playlistName, setPlaylistName] = useState('my playlist');
   const [playlistTracks, setPlaylistTracks] = useState([]);
   const [searchResults, setSearchResults] = useState([]);
@@ -39,10 +37,7 @@ const search = (term) => {
 
     return (
       <div>
-        <div>
-          <Login />
-        </div>
-        {/* <h1>play<span className="highlight">list</span>.</h1>
+        <h1>play<span className="highlight">list</span>.</h1>
         <div className="App">
         
 
@@ -63,10 +58,38 @@ const search = (term) => {
             />
 
           </div>
-        </div> */}
+        </div>
       </div>
     );
 }
 
 
-export default App;
+export default PlaylistHome;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
