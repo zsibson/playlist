@@ -3,6 +3,7 @@ import { Container } from "react-bootstrap";
 
 const AUTH_URL = "https://accounts.spotify.com/authorize?client_id=066f1f0b24c14a97aaf08e25ba339b9e&response_type=code&redirect_uri=http://localhost:3000/callback/&scope=streaming%20user-read-email%20user-read-private";
 
+
 function Login() {
 
     return(

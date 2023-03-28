@@ -1,12 +1,15 @@
 import { useState, useCallback } from "react";
-
+import './App.css';
 
 // Import Components
 import SearchBar from '../Components/SeachBar/SearchBar';
 import Playlist from './Playlist/Playlist';
 import SearchResults from './SearchResults/SearchResults';
+import useAuthCode from "../useAuthCode";
 
-function PlaylistHome() {
+function PlaylistHome({ code }) {
+  const accessToken = useAuthCode(code);
+
   const [playlistName, setPlaylistName] = useState('my playlist');
   const [playlistTracks, setPlaylistTracks] = useState([]);
   const [searchResults, setSearchResults] = useState([]);
@@ -37,6 +40,7 @@ const search = (term) => {
 
     return (
       <div>
+        <div> {code} </div>
         <h1>play<span className="highlight">list</span>.</h1>
         <div className="App">
         
