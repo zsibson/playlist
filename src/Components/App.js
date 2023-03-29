@@ -18,11 +18,6 @@ function App() {
         <PlaylistHome code={code} />
         )
       }
-
-
-        {/* <Login />
-
-        <PlaylistHome /> */}
         
       </div>
     );

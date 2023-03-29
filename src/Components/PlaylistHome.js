@@ -8,8 +8,8 @@ import SearchResults from './SearchResults/SearchResults';
 import useAuthCode from "../useAuthCode";
 
 function PlaylistHome({ code }) {
+  
   const accessToken = useAuthCode(code);
-
   const [playlistName, setPlaylistName] = useState('my playlist');
   const [playlistTracks, setPlaylistTracks] = useState([]);
   const [searchResults, setSearchResults] = useState([]);
