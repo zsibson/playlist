@@ -40,7 +40,6 @@ const search = (term) => {
 
     return (
       <div>
-        <div> {code} </div>
         <h1>play<span className="highlight">list</span>.</h1>
         <div className="App">
         
