@@ -2,7 +2,6 @@ import React, {useState} from 'react';
 import './SearchBar.css';
 
 function SearchBar(props) {
-    
     const [term, setTerm] = useState('');
 
     const handleTermChange = (e) => {

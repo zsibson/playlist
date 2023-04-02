@@ -8,7 +8,7 @@ function Tracklist({tracks, onAdd, isRemoval, onRemove}) {
         <div className="TrackList">
           {
           tracks.map((track) => {
-            // console.log(track);
+            console.log(track);
             return (
               <Track
                 track={track}

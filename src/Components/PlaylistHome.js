@@ -1,11 +1,14 @@
-import { useState, useCallback } from "react";
+import { useState, useCallback, useEffect } from "react";
 import './App.css';
-
-// Import Components
+import SpotifyWebApi from "spotify-web-api-node";
 import SearchBar from '../Components/SeachBar/SearchBar';
 import Playlist from './Playlist/Playlist';
 import SearchResults from './SearchResults/SearchResults';
 import useAuthCode from "../useAuthCode";
+
+const spotifyWebApi = new SpotifyWebApi({
+  clientId: process.env.SPOTIFY_CLIENT_ID,
+});
 
 function PlaylistHome({ code }) {
   
@@ -13,6 +16,13 @@ function PlaylistHome({ code }) {
   const [playlistName, setPlaylistName] = useState('my playlist');
   const [playlistTracks, setPlaylistTracks] = useState([]);
   const [searchResults, setSearchResults] = useState([]);
+  const [searchTerm, setSearchTerm] = useState("");
+  const [playlistId, setplaylistId] = useState(null);
+
+  useEffect(() => {
+    if (!accessToken) return
+    spotifyWebApi.setAccessToken(accessToken)
+  }, [accessToken]);
     
 const addTrack = useCallback(track => {
   if (playlistTracks.find(savedTrack => savedTrack.id === track.id)) {
@@ -30,13 +40,51 @@ const updatePlaylistName = (name) => {
   setPlaylistName(name);
 };
 
-const savePlaylist = () => {
-  const trackURIs = playlistTracks.map(track => track.uri);
+const savePlaylist = async () => {
+  if(!accessToken) return;
+  try {
+    const trackURIs = playlistTracks.map(track => track.uri);
+    const userResponse = await spotifyWebApi.getMe();
+    const userId = userResponse.body.id;
+
+    const playlistResponse = await spotifyWebApi.createPlaylist(userId, {
+      name: playlistName
+    });
+    const newPlaylistId = playlistResponse.body.id
+
+    await spotifyWebApi.addTracksToPlaylist(newPlaylistId, trackURIs);
+
+    setplaylistId(newPlaylistId);
+    setPlaylistName('my playlist');
+    setPlaylistTracks([]);
+  } catch(err){
+    console.log(err);
+  }
 };
 
-const search = (term) => {
-  console.log(term);
+const handleSearch = (term) => {
+setSearchTerm(term);
 };
+
+useEffect(() => {
+  const searchSpotify = async () => {
+    if (!searchTerm) {
+      setSearchResults([]);
+      return;
+    }
+
+    try {
+      const response = await spotifyWebApi.searchTracks(searchTerm);
+      setSearchResults(response.body.tracks.items);
+    } catch (err) {
+      console.error(err);
+    }
+  };
+
+  searchSpotify();
+}, [searchTerm]);
+
+
 
     return (
       <div>
@@ -44,7 +92,8 @@ const search = (term) => {
         <div className="App">
         
 
-          <SearchBar onSearch={search}
+          <SearchBar onSearch={handleSearch}
+                     accessToken={accessToken}
            />
           <div className="App-playlist">
             

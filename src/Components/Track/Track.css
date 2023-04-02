@@ -1,37 +1,42 @@
 .Track {
-    display: flex;
-    align-items: center;
-    border-bottom: 1px solid #000000;
-  }
-  
-  .Track-action {
-    cursor: pointer;
-    padding: .5rem;
-    font-size: 1.05rem;
-    transition: color .25s;
-    border: 0px;
-    background-color: #86868600;
-    color: #000000;
-  }
-  
-  .Track-action:hover {
-    color: #444444;
-  }
-  
-  .Track-information {
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    height: 72px;
-  }
-  
-  .Track-information h3 {
-    margin-bottom: .22rem;
-  }
-  
-  .Track-information p {
-    font-size: .83rem;
-    font-weight: 300;
-    color: #444444;
-  }
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #000000;
+  padding: 1rem 0;
+}
+
+.Track-action {
+  cursor: pointer;
+  padding: .5rem;
+  font-size: 1.50rem;
+  transition: color .25s;
+  background-color: #86868600;
+  color: #000000;
+}
+
+.Track-action:hover {
+  color: #444444;
+}
+
+.Track-information {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 72px;
+  padding-right: 1rem;
+}
+
+.Track-information h3 {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #000000;
+}
+
+.Track-information p {
+  font-size: .83rem;
+  font-weight: 300;
+  color: #444444;
+}
+
