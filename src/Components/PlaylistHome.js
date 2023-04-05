@@ -7,7 +7,7 @@ import SearchResults from './SearchResults/SearchResults';
 import useAuthCode from "../useAuthCode";
 
 const spotifyWebApi = new SpotifyWebApi({
-  clientId: process.env.SPOTIFY_CLIENT_ID,
+  clientId: '066f1f0b24c14a97aaf08e25ba339b9e',
 });
 
 function PlaylistHome({ code }) {
